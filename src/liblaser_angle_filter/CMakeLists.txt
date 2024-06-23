@@ -29,4 +29,11 @@ if(BUILD_TESTING)
 endif()
 
 
+add_executable(lidar_filter src/lidar_filter.cpp)            #test
+ament_target_dependencies(lidar_filter rclcpp sensor_msgs)
+
+
+install(TARGETS
+  lidar_filter
+  DESTINATION lib/${PROJECT_NAME})
 ament_package()
